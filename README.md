@@ -1,2 +1,2 @@
-node-fs-json
+json-style-ls
 ----

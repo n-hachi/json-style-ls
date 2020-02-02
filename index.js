@@ -1,16 +1,15 @@
 const fs = require('fs');
+const path = require('path');
 const yargs = require('yargs');
 
-async function traverse(path){
-    stat = fs.statSync(path);
-    ary = path.split('/');
-
-    let last = ary[ary.length - 1];
+async function traverse(dir_or_file){
+    let stat = fs.statSync(dir_or_file);
+    let last = path.basename(dir_or_file);
     if(stat.isDirectory()){
-        const dir = await fs.promises.opendir(path);
+        const children = fs.readdirSync(dir_or_file);
         var tmp = [];
-        for await (const dirent of dir){
-            let new_path = path + "/" + dirent.name;
+        for await (const child of children){
+            let new_path = dir_or_file + "/" + child;
             tmp.push(await traverse(new_path));
         }
         ret = {[last]:tmp};

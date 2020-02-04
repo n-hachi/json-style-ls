@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+'use restrict';
+
+const jstree = require('../lib/json-style-ls.js');
+
+jstree.run();

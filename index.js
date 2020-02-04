@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const fs = require('fs');
 const path = require('path');
 const yargs = require('yargs');
@@ -20,23 +22,26 @@ async function traverse(dir_or_file){
     return ret;
 };
 
-argv = yargs.argv;
-files = argv._
-if(files.length == 0){
-    files = ['.'];
+function main(){
+    argv = yargs.argv;
+    files = argv._
+    if(files.length == 0){
+        files = ['.'];
+    }
+
+    (async()=>{
+        result = await Promise.all(files.map(async (v)=>{
+            try{
+                return traverse(v);
+            } catch (e){
+                return;
+            }
+        }));
+
+        result.forEach((elem)=>{
+            console.log(JSON.stringify(elem));
+        });
+    })();
 }
 
-var result = null;
-(async()=>{
-    result = await Promise.all(files.map(async (v)=>{
-        try{
-            return traverse(v);
-        } catch (e){
-            return;
-        }
-    }));
-
-    result.forEach((elem)=>{
-        console.log(JSON.stringify(elem));
-    });
-})();
+main();

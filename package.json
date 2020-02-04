@@ -1,15 +1,52 @@
 {
-  "name": "fs-json",
+  "name": "json-style-ls",
   "version": "1.0.0",
-  "description": "node-fs-json ----",
-  "main": "index.js",
+  "description": "json-style-ls ----",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Nozomu Hatta",
   "license": "ISC",
   "dependencies": {
     "path": "^0.12.7",
     "yargs": "^15.1.0"
-  }
+  },
+  "preferGlobal": true,
+  "bin": {
+    "json-style-ls": "bin/json-style-ls"
+{
+  "name": "json-style-ls",
+  "version": "1.0.0",
+  "description": "json-style-ls ----",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nozomu Hatta",
+  "license": "ISC",
+  "dependencies": {
+    "path": "^0.12.7",
+    "yargs": "^15.1.0"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "json-style-ls": "bin/json-style-ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git:https://github.com/n-hachi/json-style-ls.git"
+  },
+  "bugs": {
+    "url": "https://github.com/n-hachi/json-style-ls/issues"
+  },
+  "homepage": "https://github.com/n-hachi/json-style-ls#README.md"
+}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git:https://github.com/n-hachi/json-style-ls.git"
+  },
+  "bugs": {
+    "url": "https://github.com/n-hachi/json-style-ls/issues"  
+  },
+  "homepage": "https://github.com/n-hachi/json-style-ls#README.md"  
 }
